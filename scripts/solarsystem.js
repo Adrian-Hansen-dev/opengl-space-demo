@@ -37,7 +37,7 @@ function setLighting(worldMatrix, viewMatrix, modelViewMatrix, normalMatrix) {
  * @returns {Promise<void>}
  */
 async function setupShader(gl, shader, name) {
-    gl.shaderSource(shader, await loadShader("../shader/"+ name + ".glsl"));
+    gl.shaderSource(shader, await loadShader("./shader/"+ name + ".glsl"));
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         console.error('ERROR compiling vertext Shader: ', gl.getShaderInfoLog(shader));
