@@ -78,7 +78,7 @@ async function init() {
     const skyboxProgram = gl.createProgram();
     setupProgram(gl, skyboxProgram, skyboxVertexShader, skyboxFragmentShader);
 
-    const boxVertices = await loadObj("../obj/cube.obj")
+    const boxVertices = await loadObj("./obj/cube.obj")
     const skyboxVertexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, skyboxVertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(boxVertices), gl.STATIC_DRAW);
@@ -98,27 +98,27 @@ async function init() {
     const faceInfos = [
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_X,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
-            url: "../texture/starsCubeMapTexture.png",
+            url: "./texture/starsCubeMapTexture.png",
         },
     ];
     faceInfos.forEach((faceInfo) => {
@@ -162,13 +162,13 @@ async function init() {
     setupProgram(gl, program, vertexShader, fragmentShader);
 
     //saturn ring vertices
-    const ringVertices = await loadObj("../obj/ring.obj");
+    const ringVertices = await loadObj("./obj/ring.obj");
     const ringVertexVBO = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, ringVertexVBO);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ringVertices), gl.STATIC_DRAW);
     gl.bindBuffer(gl.ARRAY_BUFFER, ringVertexVBO);
 
-    const planetVertices = await loadObj("../obj/planet.obj");
+    const planetVertices = await loadObj("./obj/planet.obj");
     const planetVertexVBO = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, planetVertexVBO);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(planetVertices), gl.STATIC_DRAW);
@@ -207,45 +207,45 @@ async function init() {
     //create Planet Texture
     gl.activeTexture(gl.TEXTURE0);
 
-    const imageMecury = "../texture/mercury.jpeg"
+    const imageMecury = "./texture/mercury.jpeg"
     const tMecury = loadImageTexture(gl, imageMecury);
 
-    const imageVenus = "../texture/venus_atmosphere.jpeg"
+    const imageVenus = "./texture/venus_atmosphere.jpeg"
     const tVenus = loadImageTexture(gl, imageVenus);
 
-    const imageEarthDay = "../texture/earth_day.png"
+    const imageEarthDay = "./texture/earth_day.png"
     const tEarthDay = loadImageTexture(gl, imageEarthDay);
 
-    const imageClouds = "../texture/earth_clouds.png"
+    const imageClouds = "./texture/earth_clouds.png"
     const tEarthClouds = loadImageTexture(gl, imageClouds);
 
-    const imageNight = "../texture/earth_night.png"
+    const imageNight = "./texture/earth_night.png"
     const tEarthNight = loadImageTexture(gl, imageNight);
 
-    const imageMoon = "../texture/moon.jpeg"
+    const imageMoon = "./texture/moon.jpeg"
     const tMoon = loadImageTexture(gl, imageMoon);
 
-    const imageMars = "../texture/mars.jpeg"
+    const imageMars = "./texture/mars.jpeg"
     const tMars = loadImageTexture(gl, imageMars);
 
-    const imageJupiter = "../texture/jupiter.jpeg";
+    const imageJupiter = "./texture/jupiter.jpeg";
     const tJupiter = loadImageTexture(gl, imageJupiter);
 
-    const imageSaturn = "../texture/saturn.jpeg";
+    const imageSaturn = "./texture/saturn.jpeg";
     const tSaturn = loadImageTexture(gl, imageSaturn);
 
-    const imageRing = "../texture/saturnRing.jpeg";
+    const imageRing = "./texture/saturnRing.jpeg";
     const tRing = loadImageTexture(gl, imageRing);
 
-    const imageUranus = "../texture/uranus.jpeg";
+    const imageUranus = "./texture/uranus.jpeg";
     const tUranus = loadImageTexture(gl, imageUranus);
 
-    const imageNeptune = "../texture/neptune.jpeg";
+    const imageNeptune = "./texture/neptune.jpeg";
     const tNeptune = loadImageTexture(gl, imageNeptune);
 
     //load video
     const textureInit = loadInitTexture(gl);
-    const video = setupVideo("../texture/sun.mp4");
+    const video = setupVideo("./texture/sun.mp4");
 
 
     const worldMatrix = new Float32Array(16);

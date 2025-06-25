@@ -63,7 +63,7 @@ async function init() {
     const skyboxProgram = gl.createProgram();
     setupProgram(gl, skyboxProgram, skyboxVertexShader, skyboxFragmentShader);
 
-    const boxVertices = await loadObj("../obj/cube.obj")
+    const boxVertices = await loadObj("./obj/cube.obj")
     const skyboxVertexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, skyboxVertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(boxVertices), gl.STATIC_DRAW);
@@ -83,27 +83,27 @@ async function init() {
     const faceInfos = [
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_X,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
         {
             target: gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
-            url: "../texture/starsCubeMapTexture2.png",
+            url: "./texture/starsCubeMapTexture2.png",
         },
     ];
     faceInfos.forEach((faceInfo) => {
@@ -144,7 +144,7 @@ async function init() {
     const blackHoleProgram = gl.createProgram();
     setupProgram(gl, blackHoleProgram, blackHoleVertexShader, blackHoleFragmentShader);
 
-    const blackHoleVertices = await loadObj("../obj/planet.obj");
+    const blackHoleVertices = await loadObj("./obj/planet.obj");
     const blackHoleVertexVBO = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, blackHoleVertexVBO);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(blackHoleVertices), gl.STATIC_DRAW);
