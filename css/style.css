@@ -1,4 +1,66 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-    --bs-body-bg: #060408;
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.dot-mask {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(rgb(50, 50, 50) 1px, transparent 1px);
+    background-size: 16px 16px;
+    -webkit-mask-image: radial-gradient(
+            ellipse 50% 50% at 50% 50%,
+            #000 60%,
+            transparent 100%
+    );
+    mask-image: radial-gradient(
+            ellipse 50% 50% at 50% 50%,
+            transparent 60%,
+            #000 100%
+    );
+}
+
+button {
+    cursor: pointer;
+    color: gray;
+    padding: 2em 2.7em;
+    margin: 1.7em;
+    background: rgba(25, 25, 25);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    border: solid 1px rgba(45, 45, 45, 1);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(35, 35, 35, 0.7);
+    transition: 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+
+button:hover{
+    border: solid 1px rgba(75, 75, 75, 1);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 1), -6px -6px 12px rgba(35, 35, 35, 1);
+    transform: translateY(-3px);
+}
+
+button:active{
+    border: solid 1px rgba(25, 25, 25, 1);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0), -6px -6px 12px rgba(35, 35, 35, 0);
+    transform: translateY(3px);}
+
+.ui-menu{
+    text-align: center;
+}
+
