@@ -61,26 +61,62 @@ header {
 button {
     cursor: pointer;
     color: gray;
-    padding: 2em 2.7em;
+    padding: 1.6em 2em;
     margin: 1.7em;
     background: rgba(25, 25, 25);
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     text-decoration: none;
-    border: solid 1px rgba(45, 45, 45, 1);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(35, 35, 35, 0.7);
+    font-size: 14pt;
+    border-width: 0;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7), inset 0 6px 10px rgba(65, 65, 65, 0.2), inset 0 -4px 0 rgba(45, 45, 45, 1);
     transition: 1s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 
 button:hover{
-    border: solid 1px rgba(75, 75, 75, 1);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 1), -6px -6px 12px rgba(35, 35, 35, 1);
+    box-shadow: 6px 6px 40px rgba(0, 0, 0, 1), inset 0 6px 10px rgba(65, 65, 65, 0.6), inset 0 -6px 0 rgba(45, 45, 45, 1);
     transform: translateY(-3px);
 }
 
+button:hover span{
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+                0 0 42px #0fa,
+            0 0 82px #0fa,
+                0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+}
+
 button:active{
-    border: solid 1px rgba(25, 25, 25, 1);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0), -6px -6px 12px rgba(35, 35, 35, 0);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0), inset 0 6px 10px rgba(0, 0, 0, 0.5), inset 0 0 0 rgba(45, 45, 45, 1);
     transform: translateY(3px);}
+
+button:active span{
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+}
+
+.button-indicator {
+    text-align: center;
+    color: rgb(65, 65, 65);;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+
 
 
