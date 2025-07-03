@@ -5,14 +5,37 @@ html, body {
     margin: 0;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-
+    color: white;
 }
 
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
+    flex-direction: column;
+    background: radial-gradient(ellipse at bottom, #000000 0%, #232324 80%);
+}
+
+header {
+    width: 100%;
+    text-align: end;
+    padding: 1.4em;
+    box-sizing: border-box;
+}
+
+.icon {
+    color: white;
+}
+
+.icon:hover {
+    color: #999;
+}
+
+.content{
+    justify-items: center;
+    height: 100%;
+    align-content: center;
+}
+.button-group{
+    text-align: center;
 }
 
 .dot-mask {
@@ -60,7 +83,4 @@ button:active{
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0), -6px -6px 12px rgba(35, 35, 35, 0);
     transform: translateY(3px);}
 
-.ui-menu{
-    text-align: center;
-}
 
