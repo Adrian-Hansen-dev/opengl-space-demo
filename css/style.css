@@ -13,12 +13,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     background: radial-gradient(ellipse at bottom, #000000 0%, #232324 80%);
 }
 
 header {
     width: 100%;
+    height: fit-content;
     display: flex;
     justify-content: end;
     gap: 1rem;
