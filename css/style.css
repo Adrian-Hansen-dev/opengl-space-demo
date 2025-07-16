@@ -75,36 +75,29 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
 
-    .card-section{
+.card-section{
+    display: flex;
+    flex-direction: row;
+
+    .card{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        text-align: start;
+        border: solid 1px rgba(255, 255, 255, 20%);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem;
+        max-width: 20rem;
+        background: linear-gradient(to left top, rgba(255, 255, 255, 10%), transparent);
 
-        .card{
+        .button-section{
             display: flex;
-            flex-direction: column;
-            align-items: start;
-            justify-content: space-between;
-            text-align: start;
-            border: solid 1px rgba(255, 255, 255, 20%);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem;
-            max-width: 20rem;
-            background: linear-gradient(to left top, rgba(255, 255, 255, 10%), transparent);
-
-            .button-section{
-                display: flex;
-                justify-content: end;
-                width: 100%;
-            }
-        }
-    }
-
-
-    @media (max-width: 80rem) {
-        .card-section{
-            flex-direction: column;
+            justify-content: end;
+            width: 100%;
         }
     }
 }
@@ -116,38 +109,40 @@ header {
     height: 100%;
     align-items: center;
     max-width: 85%;
+}
 
-    .canvas{
-        border-radius: 1rem;
-        display: block;
-        width: 80%;
-        height: 80%;
-        max-width: 80vh;
-        max-height: 80vh;
-        border: solid rgb(40, 40, 40);
-        aspect-ratio: 1 / 1;
+.canvas{
+    border-radius: 1rem;
+    display: block;
+    width: 80%;
+    height: 80%;
+    max-width: 80vh;
+    max-height: 80vh;
+    border: solid rgb(40, 40, 40);
+    aspect-ratio: 1 / 1;
 
-    }
+}
 
-    .information{
-        display: flex;
-        padding: 2rem;
+.information{
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 80rem) {
+    .card-section{
         flex-direction: column;
-        justify-content: center;
     }
-
-    @media (max-width: 80rem) {
-        .content{
-            flex-direction: column;
-        }
-        .canvas {
-            width: 100%;
-            height: 100%;
-        }
-
-        .information{
-            padding: 2rem 0 0 0;
-        }
+    .content{
+        flex-direction: column;
+    }
+    .canvas {
+        width: 100%;
+        height: 100%;
+    }
+    .information{
+        padding: 2rem 0 0 0;
     }
 }
 
