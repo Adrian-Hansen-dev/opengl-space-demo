@@ -11,7 +11,42 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: radial-gradient(ellipse at bottom, #000000 0%, #232324 80%);
+    background: radial-gradient(circle at right bottom,
+    #ffffff 0%,           /* Zentrum - hell */
+    #e1f1fb 3%,           /* sehr naher Übergang */
+    #a2d4f7 6%,
+    #69b7f0 10%,
+    #337bbd 18%,
+    #1a4e89 28%,
+    #0a2345 42%,
+    #000010 60%,
+    #000000 100%
+    );
+}
+
+.dot-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    inset: 0;
+    background-image: radial-gradient(#2b2b2b  1px, transparent 1px);
+    background-size: 16px 16px;
+    -webkit-mask-image: radial-gradient(circle at right bottom,
+    transparent 0%,
+    transparent 32%,
+    #000 48%,
+    #000 100%
+    );
+    mask-image: radial-gradient(circle at right bottom,
+    transparent 0%,
+    transparent 60%,
+    #000 90%,
+    #000 100%
+    );
 }
 
 header {
@@ -40,11 +75,31 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
 
-.button-group{
-    display: flex;
-    flex-direction: row;
+    .card-section{
+        display: flex;
+        flex-direction: row;
+
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            text-align: start;
+            border: solid 1px rgba(255, 255, 255, 20%);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem;
+            max-width: 20rem;
+            background: linear-gradient(to left top, rgba(255, 255, 255, 10%), transparent);
+
+            .button-section{
+                display: flex;
+                justify-content: end;
+                width: 100%;
+            }
+        }
+    }
 }
 
 .content{
@@ -54,25 +109,25 @@ header {
     height: 100%;
     align-items: center;
     max-width: 85%;
-}
 
-.canvas{
-    border-radius: 1rem;
-    display: block;
-    width: 80%;
-    height: 80%;
-    max-width: 80vh;
-    max-height: 80vh;
-    border: solid rgb(40, 40, 40);
-    aspect-ratio: 1 / 1;       /* bewahrt Seitenverhältnis */
+    .canvas{
+        border-radius: 1rem;
+        display: block;
+        width: 80%;
+        height: 80%;
+        max-width: 80vh;
+        max-height: 80vh;
+        border: solid rgb(40, 40, 40);
+        aspect-ratio: 1 / 1;
 
-}
+    }
 
-.information{
-    display: flex;
-    padding: 2rem;
-    flex-direction: column;
-    justify-content: center;
+    .information{
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 80rem) {
@@ -88,32 +143,28 @@ header {
         padding: 2rem 0 0 0;
     }
 
-    .button-group{
+    .card-section{
         flex-direction: column;
     }
 }
 
-.dot-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    inset: 0;
-    background-image: radial-gradient(rgb(50, 50, 50) 1px, transparent 1px);
-    background-size: 16px 16px;
-    -webkit-mask-image: radial-gradient(
-            ellipse 50% 50% at 50% 50%,
-            #000 60%,
-            transparent 100%
-    );
-    mask-image: radial-gradient(
-            ellipse 50% 50% at 50% 50%,
-            transparent 60%,
-            #000 100%
-    );
+
+h1{
+    background: linear-gradient(to left top, white 30%, #000010 100%);
+    color: transparent;
+    background-clip: text;
+    margin: 1rem 0 0.5rem;
+    font-size: 50px;
+}
+
+h3{
+    font-size: 24px;
+    margin: 1rem 0 0.5rem;
+}
+
+p{
+    margin: 0 0 1rem 0 ;
+    color: #e1f1fb;
 }
 
 .icon {
@@ -124,65 +175,76 @@ a:hover .icon {
     color: #999;
 }
 
-button {
+/* From Uiverse.io by Allyhere */
+.btn {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     cursor: pointer;
-    color: gray;
-    padding: 1.6em 2em;
-    margin: 1.7em;
-    background: rgba(25, 25, 25);
-    border-radius: 0.8rem;
-    text-decoration: none;
-    font-size: 14pt;
-    border-width: 0;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7), inset 0 6px 10px rgba(65, 65, 65, 0.2), inset 0 -4px 0 rgba(45, 45, 45, 1);
-    transition: 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(
+            325deg,
+            var(--btn-bg-2) 0%,
+            var(--btn-bg-1) 55%,
+            var(--btn-bg-2) 90%
+    );
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow:
+            0 0 20px rgba(71, 184, 255, 0.5),
+            0 5px 5px -1px rgba(58, 125, 233, 0.25),
+            inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+            inset -4px -4px 8px rgba(19, 95, 216, 0.35);
 }
 
-
-button:hover{
-    box-shadow: 10px 10px 12px rgba(0, 0, 0, 1), inset 0 6px 10px rgba(65, 65, 65, 0.6), inset 0 -6px 0 rgba(45, 45, 45, 1);
-    transform: translateY(-3px);
+.btn:hover {
+    background-position: right top;
 }
 
-button:hover span{
+.btn:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow:
+            0 0 0 3px var(--btn-bg-color),
+            0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: linear;
+    }
+}
+
+/* From Uiverse.io by Allyhere END */
+
+
+.btn:hover {
     color: #fff;
     text-shadow:
             0 0 7px #fff,
             0 0 10px #fff,
             0 0 21px #fff,
-                0 0 42px #0fa,
-            0 0 82px #0fa,
-                0 0 92px #0fa,
-            0 0 102px #0fa,
-            0 0 151px #0fa;
+            0 0 42px #0fa
 }
 
-button:active{
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0), inset 0 6px 10px rgba(0, 0, 0, 0.5), inset 0 0 0 rgba(45, 45, 45, 1);
-    transform: translateY(3px);}
-
-button:active span{
+.btn:active{
     color: #fff;
     text-shadow:
             0 0 7px #fff,
             0 0 10px #fff,
             0 0 21px #fff,
-            0 0 42px #0fa,
-            0 0 82px #0fa,
-            0 0 92px #0fa,
-            0 0 102px #0fa,
-            0 0 151px #0fa;
+            0 0 42px #0fa
 }
-
-.button-indicator {
-    text-align: center;
-    color: rgb(65, 65, 65);;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-}
-
-
-
 
 
