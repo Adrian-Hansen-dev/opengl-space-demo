@@ -12,8 +12,8 @@ body{
     display: flex;
     flex-direction: column;
     background: radial-gradient(circle at right bottom,
-    #ffffff 0%,           /* Zentrum - hell */
-    #e1f1fb 3%,           /* sehr naher Übergang */
+    #ffffff 0%,
+    #e1f1fb 3%,
     #a2d4f7 6%,
     #69b7f0 10%,
     #337bbd 18%,
@@ -227,7 +227,6 @@ a:hover .icon {
 }
 
 /* From Uiverse.io by Allyhere END */
-
 
 .btn:hover {
     color: #fff;
