@@ -60,9 +60,10 @@ function setupProgram(gl, program, vertexShader, fragmentShader) {
     }
 
 }
-
 async function init() {
-    const canvas = document.getElementById('cg1');
+    document.getElementById("loader-canvas").style.display = "flex";
+
+    const canvas = document.getElementById('solarsystem');
     const gl = canvas.getContext('webgl');
 
 
@@ -203,45 +204,30 @@ async function init() {
     const textureEarthNightUniformLocation = gl.getUniformLocation(program, 'textureEarthNight');
     const textureEarthCloudsUniformLocation = gl.getUniformLocation(program, 'textureEarthClouds');
 
-
     //create Planet Texture
     gl.activeTexture(gl.TEXTURE0);
 
-    const imageMecury = "./texture/mercury.jpeg"
-    const tMecury = loadImageTexture(gl, imageMecury);
+    const texturePromises = [
+        loadImageTexture(gl, "./texture/mercury.jpeg"),
+        loadImageTexture(gl, "./texture/venus_atmosphere.jpeg"),
+        loadImageTexture(gl, "./texture/earth_day.png"),
+        loadImageTexture(gl, "./texture/earth_clouds.png"),
+        loadImageTexture(gl, "./texture/earth_night.png"),
+        loadImageTexture(gl, "./texture/moon.jpeg"),
+        loadImageTexture(gl, "./texture/mars.jpeg"),
+        loadImageTexture(gl, "./texture/jupiter.jpeg"),
+        loadImageTexture(gl, "./texture/saturn.jpeg"),
+        loadImageTexture(gl, "./texture/saturnRing.jpeg"),
+        loadImageTexture(gl, "./texture/uranus.jpeg"),
+        loadImageTexture(gl, "./texture/neptune.jpeg"),
+        loadImageTexture(gl, "./texture/sun.png")
 
-    const imageVenus = "./texture/venus_atmosphere.jpeg"
-    const tVenus = loadImageTexture(gl, imageVenus);
+    ];
 
-    const imageEarthDay = "./texture/earth_day.png"
-    const tEarthDay = loadImageTexture(gl, imageEarthDay);
-
-    const imageClouds = "./texture/earth_clouds.png"
-    const tEarthClouds = loadImageTexture(gl, imageClouds);
-
-    const imageNight = "./texture/earth_night.png"
-    const tEarthNight = loadImageTexture(gl, imageNight);
-
-    const imageMoon = "./texture/moon.jpeg"
-    const tMoon = loadImageTexture(gl, imageMoon);
-
-    const imageMars = "./texture/mars.jpeg"
-    const tMars = loadImageTexture(gl, imageMars);
-
-    const imageJupiter = "./texture/jupiter.jpeg";
-    const tJupiter = loadImageTexture(gl, imageJupiter);
-
-    const imageSaturn = "./texture/saturn.jpeg";
-    const tSaturn = loadImageTexture(gl, imageSaturn);
-
-    const imageRing = "./texture/saturnRing.jpeg";
-    const tRing = loadImageTexture(gl, imageRing);
-
-    const imageUranus = "./texture/uranus.jpeg";
-    const tUranus = loadImageTexture(gl, imageUranus);
-
-    const imageNeptune = "./texture/neptune.jpeg";
-    const tNeptune = loadImageTexture(gl, imageNeptune);
+    const [
+        tMecury, tVenus, tEarthDay, tEarthClouds, tEarthNight,
+        tMoon, tMars, tJupiter, tSaturn, tRing, tUranus, tNeptune, tSun
+    ] = await Promise.all(texturePromises);
 
     //load video
     const textureInit = loadInitTexture(gl);
@@ -390,6 +376,10 @@ async function init() {
         if (copyVideo) {
             updateVideoTexture(gl, textureInit, video);
         }
+        else{
+            gl.bindTexture(gl.TEXTURE_2D, tSun);
+        }
+
 
         gl.uniform3f(lightAmbientUniformLocation, 1.0, 1.0, 1.0);
         gl.uniform3f(matEmissionUniformLocation, 1.0, 1.0, 1.0);
@@ -568,10 +558,10 @@ async function init() {
 
         requestAnimationFrame(loop);
     }
+    document.getElementById("loader-canvas").style.display = "none";
+    document.getElementById("solarsystem").style.display = "block";
 
     requestAnimationFrame(loop);
-
-
 }
 
 window.onload = init;

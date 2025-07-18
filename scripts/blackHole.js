@@ -47,6 +47,7 @@ function setLighting(worldMatrix, viewMatrix, modelViewMatrix, normalMatrix) {
 }
 
 async function init() {
+    document.getElementById("loader-canvas").style.display = "flex";
     const canvas = document.getElementById('blackHole');
     const gl = canvas.getContext('webgl');
 
@@ -267,6 +268,9 @@ async function init() {
 
         requestAnimationFrame(loop);
     }
+
+    document.getElementById("loader-canvas").style.display = "none";
+    document.getElementById("blackHole").style.display = "block";
 
     requestAnimationFrame(loop);
 
