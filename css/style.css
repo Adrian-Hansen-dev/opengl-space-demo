@@ -80,26 +80,29 @@ header {
 .card-section{
     display: flex;
     flex-direction: row;
+}
 
-    .card{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: space-between;
-        text-align: start;
-        border: solid 1px rgba(255, 255, 255, 20%);
-        border-radius: 1rem;
-        padding: 2rem;
-        margin: 2rem;
-        max-width: 20rem;
-        background: linear-gradient(to left top, rgba(255, 255, 255, 10%), transparent);
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    text-align: start;
+    border: solid 1px rgba(255, 255, 255, 20%);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+    max-width: 20rem;
+    background: linear-gradient(to left top, rgba(255, 255, 255, 10%), transparent);
 
-        .button-section{
-            display: flex;
-            justify-content: end;
-            width: 100%;
-        }
-    }
+
+}
+
+.button-section{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 0.2em;
 }
 
 .content{
@@ -111,9 +114,14 @@ header {
     max-width: 85%;
 }
 
+.canvas-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: end;
+}
+
 .canvas{
     border-radius: 1rem;
-    margin: 2rem;
     display: none;
     max-width: 600px;
     max-height: 600px;
@@ -125,7 +133,6 @@ header {
 .loader-canvas{
     border-radius: 1rem;
     display: flex;
-    margin: 2rem;
     justify-content: center;
     align-items: center;
     width: 600px;
@@ -196,7 +203,7 @@ a:hover .icon {
 }
 
 /* From Uiverse.io by Allyhere */
-.btn {
+.btn-primary {
     --clr-font-main: hsla(0 0% 20% / 100);
     --btn-bg-1: hsla(194 100% 69% / 1);
     --btn-bg-2: hsla(217 100% 56% / 1);
@@ -229,11 +236,11 @@ a:hover .icon {
             inset -4px -4px 8px rgba(19, 95, 216, 0.35);
 }
 
-.btn:hover {
+.btn-primary:hover {
     background-position: right top;
 }
 
-.btn:is(:focus, :focus-visible, :active) {
+.btn-primary:is(:focus, :focus-visible, :active) {
     outline: none;
     box-shadow:
             0 0 0 3px var(--btn-bg-color),
@@ -241,14 +248,14 @@ a:hover .icon {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .btn {
+    .btn-primary {
         transition: linear;
     }
 }
 
 /* From Uiverse.io by Allyhere END */
 
-.btn:hover {
+.btn-primary:hover {
     color: #fff;
     text-shadow:
             0 0 7px #fff,
@@ -257,13 +264,34 @@ a:hover .icon {
             0 0 42px #0fa
 }
 
-.btn:active{
+.btn-primary:active{
     color: #fff;
     text-shadow:
             0 0 7px #fff,
             0 0 10px #fff,
             0 0 21px #fff,
             0 0 42px #0fa
+}
+
+.btn-secondary{
+    text-align: center;
+    cursor: pointer;
+    padding: 0.4em 0.6em;
+    margin: 0.4em 0;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.2);
+    border: solid 0.1rem darkgray;
+    border-radius: 0.5em;
+}
+
+.btn-secondary:hover{
+    background: rgba(0, 0, 0, 0.3);
+
+    svg{
+        color: gray;
+    }
+
 }
 
 .loader {

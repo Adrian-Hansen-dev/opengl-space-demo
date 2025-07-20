@@ -60,6 +60,17 @@ function setupProgram(gl, program, vertexShader, fragmentShader) {
     }
 
 }
+
+let angle = 0;
+let zoomValue=0;
+let zoom = 30;
+
+function zoomCanvas(amount){
+    if(zoom+amount >=5 && zoom+amount<=60){
+        zoom+=amount;
+    }
+}
+
 async function init() {
     document.getElementById("loader-canvas").style.display = "flex";
 
@@ -240,25 +251,10 @@ async function init() {
     const modelViewMatrix = new Float32Array(16);
     const normalMatrix = new Float32Array(9);
 
-    let angle = 0;
-    let zoomValue=0;
-    let zoom = 30;
 
     gl.enable(gl.DEPTH_TEST);
     gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ZERO, gl.ONE);
     gl.enable(gl.BLEND);
-
-    //get mouse scroll value
-    window.addEventListener("wheel", event => {
-        zoomValue = event.deltaY;
-        if(zoomValue>0){
-            zoom++;
-        }
-        if(zoomValue<0){
-            zoom--;
-        }
-        zoom = Math.max(Math.min(zoom, 60), 5);
-    });
 
     function loop() {
         angle = performance.now() / 2000 / 6 * 2 * Math.PI;
