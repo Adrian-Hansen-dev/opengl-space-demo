@@ -2,7 +2,6 @@
 
 🔭 [View the live demo](https://adrian-hansen-dev.github.io/opengl-space-demo/)
 
----
 ## Description
 
 In this OpenGL project, fundamental computer graphics concepts are demonstrated within a space-themed 3D scene. The project showcases the following features:
