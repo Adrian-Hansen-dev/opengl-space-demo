@@ -1,6 +1,6 @@
 # Exploring Space with WebGL
 
-🔭 [View the live demo](https://adrian-hansen-dev.github.io/opengl-space-demo/)
+🔭 [View the live demo](https://adrian-hansen-dev.github.io/webgl-space-demo/)
 
 ## Description
 
