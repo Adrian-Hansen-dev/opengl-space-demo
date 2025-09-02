@@ -4,7 +4,7 @@
 
 ## Description
 
-In this OpenGL project, fundamental computer graphics concepts are demonstrated within a space-themed 3D scene. The project showcases the following features:
+In this WebGL project, fundamental computer graphics concepts are demonstrated within a space-themed 3D scene. The project showcases the following features:
 
 - **Rendering multiple 3D objects** in a shared scene
 - **Loading geometry data** from external files (e.g., `.obj`)
